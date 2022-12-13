@@ -18,7 +18,7 @@ public class Board extends Application {
     // volume controls, different instrument options like an action piano
     // advanced: blending of sounds like a real piano instead of stopping once another key is started 
 
-    Key C1 = new Key(Color.ANTIQUEWHITE, "enter media file");
+    Key C1 = new Key(Color.ANTIQUEWHITE, "media/do1.wav");
     Key Csharp1 = new Key(Color.BLACK, "enter media file");
     Key D1 = new Key(Color.ANTIQUEWHITE, "enter media file");
     Key Eb1 = new Key(Color.BLACK, "enter media file");
@@ -55,6 +55,8 @@ public class Board extends Application {
     public void start(Stage stage) throws Exception {
         HBox keys = new HBox();
         VBox board = new VBox();
+
+        C1.generateMediaPlayer();
 
         Button C1button = makeButton(C1);
         C1button.setOnAction((EventHandler<ActionEvent>) new EventHandler<ActionEvent>() {
@@ -178,7 +180,7 @@ public class Board extends Application {
         keys.getChildren().add(C2button);
 
         Label border = new Label();
-        border.setBackground(new Background(new BackgroundFill(Color.AZURE, null, null)));
+        border.setBackground(new Background(new BackgroundFill(Color.BLUEVIOLET, null, null)));
 
         board.getChildren().add(border);
         board.getChildren().add(keys);
